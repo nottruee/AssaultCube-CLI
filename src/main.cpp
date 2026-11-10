@@ -26,7 +26,7 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
     // cout
     std::cout << "Application path: " << ourhome << "\n";
     std::cout << "Executable path: " << exec << "\n\n";
-    std::cout << "Options: \n1: launch\n2: edit arguments\n3: exit\n4: edit whatever\n5: clear terminal\n";
+    std::cout << "Options: \n1: launch\n2: edit arguments\n3: edit whatever\n4: exit\n5: clear terminal\n";
     std::cout << "I like pink: "; // because i like pink
 
     std::string input; // ask the user for an input to figure out what to do next
@@ -72,15 +72,12 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
             break;
         }
         case '3': {
-            std::cout << "Exiting...\n";
-            amIWantingToBeAFemboy = false; // its still true
-            break; // why not just return 0; idk im a weirdo and i want to use amIWantingToBeAFemboy
-        }
-        case '4': { 
             // ill just copy edit arguments but for stuff like "ourhome" 
             // never mind i just made this and its worse so ill kep it
             std::cout << "1: Application path: " << ourhome << "\n";
-            std::cout << "2: Executable path: " << exec << "\n";
+            std::cout << "2: Home path: " << homeeqthing << "\n";
+            std::cout << "3: Executable path: " << exec << "\n";
+            std::cout << "4: Data path: " << data << "\n";
 
             std::cout << "Enter the number of the path you want to edit (or 0 to cancel): ";
             getline(std::cin, input);
@@ -88,14 +85,26 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
                 std::cout << "Enter new application path: ";
                 getline(std::cin, ourhome);
             } else if (input == "2") {
+                std::cout << "Enter new home path: ";
+                getline(std::cin, homeeqthing);
+            } else if (input == "3") {
                 std::cout << "Enter new executable path: ";
                 getline(std::cin, exec);
-            } else if (input == "0" || input.empty()) {
+            } else if (input == "4") {
+                std::cout << "Enter new data path: ";
+                getline(std::cin, data);
+            }
+             else if (input == "0" || input.empty()) {
                 std::cout << "Edit cancelled.\n\n";
             } else {
                 std::cout << "Invalid input: '" << input << "'\n";
             }
             break;
+        }
+        case '4': {
+            std::cout << "Exiting...\n";
+            amIWantingToBeAFemboy = false; // its still true
+            break; // why not just return 0; idk im a weirdo and i want to use amIWantingToBeAFemboy
         }
         case '5': {
             system("clear");

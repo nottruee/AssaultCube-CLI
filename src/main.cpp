@@ -17,6 +17,7 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
     bool amIWantingToBeAFemboy = true;
     // strings
     std::string ourhome = "/Applications/AssaultCube.app";
+    std::string homeeqthing = "$HOME/Library/Application Support/assaultcube/v1.3";
     std::string data = "/Contents/gamedata"; // i want the user to point to "AssaultCube.app" if i add that
     std::string exec = "./assaultcube.app/Contents/MacOS/assaultcube";
     std::vector<std::string> arguments = {"--init", "-w1637", "-h1024", "-z32", "-a0", "-t1", "-s8"}; // i think this is better
@@ -25,14 +26,14 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
     // cout
     std::cout << "Application path: " << ourhome << "\n";
     std::cout << "Executable path: " << exec << "\n\n";
-    std::cout << "Options: \n1: launch\n2: edit arguments\n3: exit\n4: clear terminal\n";
+    std::cout << "Options: \n1: launch\n2: edit arguments\n3: exit\n4: edit whatever\n5: clear terminal\n";
     std::cout << "I like pink: "; // because i like pink
 
     std::string input; // ask the user for an input to figure out what to do next
     getline(std::cin, input);
     switch (input[0]) {
         case '1': {
-            std::string command = "cd \"" + ourhome + data + "\" && exec \"" + exec + "\" --home=\"$HOME/Library/Application Support/assaultcube/v1.3\" ";
+            std::string command = "cd \"" + ourhome + data + "\" && exec \"" + exec + "\" --home=\"" + homeeqthing + "\" ";
             for (const auto& arg : arguments) {
                 command += arg + " ";
             }
@@ -75,7 +76,28 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
             amIWantingToBeAFemboy = false; // its still true
             break; // why not just return 0; idk im a weirdo and i want to use amIWantingToBeAFemboy
         }
-        case '4': {
+        case '4': { 
+            // ill just copy edit arguments but for stuff like "ourhome" 
+            // never mind i just made this and its worse so ill kep it
+            std::cout << "1: Application path: " << ourhome << "\n";
+            std::cout << "2: Executable path: " << exec << "\n";
+
+            std::cout << "Enter the number of the path you want to edit (or 0 to cancel): ";
+            getline(std::cin, input);
+            if (input == "1") {
+                std::cout << "Enter new application path: ";
+                getline(std::cin, ourhome);
+            } else if (input == "2") {
+                std::cout << "Enter new executable path: ";
+                getline(std::cin, exec);
+            } else if (input == "0" || input.empty()) {
+                std::cout << "Edit cancelled.\n\n";
+            } else {
+                std::cout << "Invalid input: '" << input << "'\n";
+            }
+            break;
+        }
+        case '5': {
             system("clear");
             break;
         }
@@ -93,4 +115,10 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
  * "Naming them patch"
  * Misty 7:57PM
  * "Nevermind"
+ * Me! 7:59 PM
+ * "What did I miss"
+ * Misty 8:00 PM
+ * "Dog tried to eat i and my parents are sped heads"
+ * Me! 8:14 PM
+ * "Idk how to respond"
  */

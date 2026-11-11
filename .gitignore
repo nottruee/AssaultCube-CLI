@@ -1,3 +1,8 @@
+# annoying text editor
 .vscode/
+
+# dont commit test builds
 build/
+
+# os stuffs
 .DS_Store

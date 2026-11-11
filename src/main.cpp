@@ -1,3 +1,4 @@
+#include "clearTerminal.h"
 #include <iostream>
 #include <vector>
 
@@ -12,7 +13,7 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
      * should i worry about the agruments being able to be changed by the user not right now 
      */
 
-    system("clear"); // clean terminal kitty!
+    clearTerminal(); // clear terminal kitty!
     // bools
     bool amIWantingToBeAFemboy = true;
     // strings
@@ -39,7 +40,6 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
             }
             std::cout << "Executing command\n\n"; // "you were sprayed by KillSwitch" tragic i got killed by an ai multiple times
             system(command.c_str()); // "rrawr" 
-        
             std::cout << "\n"; // it should look better
             break; // why just be like java we dont need "break;"
         }
@@ -107,7 +107,7 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
             break; // why not just return 0; idk im a weirdo and i want to use amIWantingToBeAFemboy
         }
         case '5': {
-            system("clear");
+            clearTerminal();
             break;
         }
         default: {

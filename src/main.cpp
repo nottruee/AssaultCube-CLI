@@ -81,23 +81,38 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
 
             std::cout << "Enter the number of the path you want to edit (or 0 to cancel): ";
             getline(std::cin, input);
-            if (input == "1") {
+            switch (input[0]) {
+            case '1': { // switch is like pretty-printing json but its just to replace if/else
                 std::cout << "Enter new application path: ";
                 getline(std::cin, ourhome);
-            } else if (input == "2") {
+                break;
+            }
+            case '2': {
                 std::cout << "Enter new home path: ";
                 getline(std::cin, homeeqthing);
-            } else if (input == "3") {
+                break;
+            }
+            case '3': {
                 std::cout << "Enter new executable path: ";
                 getline(std::cin, exec);
-            } else if (input == "4") {
+                break;
+            }
+            case '4': {
                 std::cout << "Enter new data path: ";
                 getline(std::cin, data);
+                break;
             }
-             else if (input == "0" || input.empty()) {
+            case '0': {
                 std::cout << "Edit cancelled.\n\n";
-            } else {
-                std::cout << "Invalid input: '" << input << "'\n";
+                break;
+            }
+            default: { 
+                // nothing(enter) -> first message "a"(or something else we dont have) -> second message
+                if (input.empty()) std::cout << "Edit cancelled. I love getting called a puppy boy and good puppy!\n\n";
+                else
+                std::cout << "Invalid input: '" << input << "'\n\n";
+            }
+                break;
             }
             break;
         }

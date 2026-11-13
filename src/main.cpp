@@ -111,23 +111,10 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
             break;
         }
         default: {
-            std::cout << "Invalid input. No action taken.\n";
+            std::cout << "Invalid input. No action taken.\n\n";
             break;
         }
     }
 }
     return 0; // bye kitty !
 } // "I want to text you genius" - misty
-/**
- * Misty 5:58PM
- * "Just got a kitten"
- * "Naming them patch"
- * Misty 7:57PM
- * "Nevermind"
- * Me! 7:59 PM
- * "What did I miss"
- * Misty 8:00 PM
- * "Dog tried to eat i and my parents are sped heads"
- * Me! 8:14 PM
- * "Idk how to respond"
- */

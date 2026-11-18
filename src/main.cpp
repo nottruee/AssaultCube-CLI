@@ -27,7 +27,7 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
     // cout
     std::cout << "Application path: " << ourhome << "\n";
     std::cout << "Executable path: " << exec << "\n\n";
-    std::cout << "Options: \n1: launch\n2: edit arguments\n3: edit whatever\n4: exit\n5: clear terminal\n";
+    std::cout << "Options: \n1: launch\n2: edit arguments\n3: edit app info\n4: exit\n5: clear terminal\n"; // "edit app info" is the best thing i could come up with
     std::cout << "I like pink: "; // because i like pink
 
     std::string input; // ask the user for an input to figure out what to do next

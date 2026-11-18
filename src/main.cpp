@@ -108,7 +108,10 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
             }
             default: { 
                 // nothing(enter) -> first message "a"(or something else we dont have) -> second message
-                if (input.empty()) std::cout << "Edit cancelled. I love getting called a puppy boy and good puppy!\n\n";
+                if (input.empty()) {
+                    std::cout << "Edit cancelled. I love getting called a puppy boy and good puppy!\n";
+                    std::cout << "call me your little kitty boy uwu\n\n"; 
+                }
                 else
                 std::cout << "Invalid input: '" << input << "'\n\n";
             }
@@ -118,8 +121,7 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
         }
         case '4': {
             std::cout << "Exiting...\n";
-            amIWantingToBeAFemboy = false; // its still true
-            break; // why not just return 0; idk im a weirdo and i want to use amIWantingToBeAFemboy
+            return 0; // we are forever a femboy!
         }
         case '5': {
             clearTerminal();

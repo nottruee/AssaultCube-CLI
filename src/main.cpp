@@ -72,8 +72,6 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
             break;
         }
         case '3': {
-            // ill just copy edit arguments but for stuff like "ourhome" 
-            // never mind i just made this and its worse so ill kep it
             std::cout << "1: Application path: " << ourhome << "\n";
             std::cout << "2: Home path: " << homeeqthing << "\n";
             std::cout << "3: Executable path: " << exec << "\n";

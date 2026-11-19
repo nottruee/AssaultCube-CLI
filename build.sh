@@ -13,11 +13,11 @@ u="$(uname -s)"
 if (($"u" != "Darwin")); then 
 # i dont have zig and i dont wanna download it my terminal is also a crime scene i kept trying java/c++ syntax for the if
 # i recommend being sleep deprived 
-    printf "Compiling for Linx (x86_64, static)...\n"
+    printf "Compiling for Linx (Linux x86_64, static)...\n"
     zig c++ -target x86_64-linux-musl src/*.cpp -o build/assaultcube-cli-linux
     printf "Done!\n"
     else
-    printf "Skipping lix(linux i cant spell) uname: "; uname -s # i missed another
+    printf "Skipping lix(Linux i cant spell) uname: "; uname -s # i missed another
 fi
 
 if (( 0 == 1 )); then # not building for windows yet

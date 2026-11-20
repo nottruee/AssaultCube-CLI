@@ -110,8 +110,7 @@ exec "./assaultcube.app/Contents/MacOS/assaultcube" \
                     std::cout << "Edit cancelled. I love getting called a puppy boy and good puppy!\n";
                     std::cout << "call me your little kitty boy uwu\n\n"; 
                 }
-                else
-                std::cout << "Invalid input: '" << input << "'\n\n";
+                else std::cout << "Invalid input: '" << input << "'\n\n";
             }
                 break;
             }
